@@ -169,8 +169,7 @@
 #endif
 
 #ifndef POWER_LOSS_PIN
-  // otherwise "Power Outage" when starting a program (or resistor)
-  //#define POWER_LOSS_PIN                    PA13  // PW_DET
+  #define POWER_LOSS_PIN                    PA13  // PW_DET
 #endif
 
 //#define SUICIDE_PIN                       PB2

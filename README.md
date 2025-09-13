@@ -57,3 +57,5 @@ can be replaced:
 but without TFT_LVGL_UI there is no MKS_WIFI_MODULE
 
 ## Commit - Fast Z, max temperature extruder for ABS = 280
+
+## Commit - Mount BIGTREETECH UPS 24V V1.0
