@@ -44,24 +44,24 @@ namespace LanguageNarrow_pl {
   constexpr uint8_t CHARSIZE              = 2;
   LSTR LANGUAGE                           = _UxGT("Polski");
 
-  LSTR WELCOME_MSG                        = MACHINE_NAME _UxGT(" gotowy.");
+  LSTR WELCOME_MSG                        = MACHINE_NAME_SUBST _UxGT(" gotowy.");
   LSTR MSG_YES                            = _UxGT("TAK");
   LSTR MSG_NO                             = _UxGT("NIE");
   LSTR MSG_BACK                           = _UxGT("Wstecz");
+
   LSTR MSG_MEDIA_ABORTING                 = _UxGT("Przerywanie...");
   LSTR MSG_MEDIA_INSERTED                 = _UxGT("Karta włożona");
   LSTR MSG_MEDIA_REMOVED                  = _UxGT("Karta usunięta");
-  LSTR MSG_MEDIA_WAITING                  = _UxGT("Oczekiwanie na kartę");
   LSTR MSG_MEDIA_INIT_FAIL                = _UxGT("Błąd inicializacji karty");
   LSTR MSG_MEDIA_READ_ERROR               = _UxGT("Bład odczytu karty");
-  LSTR MSG_MEDIA_USB_REMOVED              = _UxGT("Urządzenie USB usunięte");
-  LSTR MSG_MEDIA_USB_FAILED               = _UxGT("Błąd uruchomienia USB");
+  LSTR MSG_USB_FD_DEVICE_REMOVED          = _UxGT("Urządzenie USB usunięte");
+  LSTR MSG_USB_FD_USB_FAILED              = _UxGT("Błąd uruchomienia USB");
+
   LSTR MSG_LCD_ENDSTOPS                   = _UxGT("Krańców."); // Max length 8 characters
   LSTR MSG_LCD_SOFT_ENDSTOPS              = _UxGT("Progr. Krańcówki");
   LSTR MSG_MAIN_MENU                      = _UxGT("Menu główne");
   LSTR MSG_ADVANCED_SETTINGS              = _UxGT("Ustawienie zaawansowane");
   LSTR MSG_CONFIGURATION                  = _UxGT("Konfiguracja");
-  LSTR MSG_RUN_AUTO_FILES                 = _UxGT("Autostart");
   LSTR MSG_DISABLE_STEPPERS               = _UxGT("Wyłącz silniki");
   LSTR MSG_DEBUG_MENU                     = _UxGT("Menu Debugowania");
   LSTR MSG_PROGRESS_BAR_TEST              = _UxGT("Testowy pasek postępu");
@@ -208,7 +208,8 @@ namespace LanguageNarrow_pl {
   LSTR MSG_UBL_7_SAVE_MESH                = _UxGT("7. Zapis siatki stołu");
 
   LSTR MSG_LED_CONTROL                    = _UxGT("Sterowanie LED");
-  LSTR MSG_LEDS                           = _UxGT("Światła");
+  LSTR MSG_LIGHTS                         = _UxGT("Światła");
+  LSTR MSG_LIGHT_N                        = _UxGT("Światło #{");
   LSTR MSG_LED_PRESETS                    = _UxGT("Ustawienia świateł");
   LSTR MSG_SET_LEDS_RED                   = _UxGT("Czerwony");
   LSTR MSG_SET_LEDS_ORANGE                = _UxGT("Pomarańczowy");
@@ -357,16 +358,24 @@ namespace LanguageNarrow_pl {
   LSTR MSG_FILAMENTUNLOAD                 = _UxGT("Wysuń Filament");
   LSTR MSG_FILAMENTUNLOAD_E               = _UxGT("Wysuń Filament *");
   LSTR MSG_FILAMENTUNLOAD_ALL             = _UxGT("Wysuń wszystkie");
+
   LSTR MSG_ATTACH_MEDIA                   = _UxGT("Inicjal. karty SD");
+  LSTR MSG_ATTACH_SD                      = _UxGT("Inicjal. karty SD");
+  LSTR MSG_ATTACH_USB                     = _UxGT("Inicjal. dysk flash");
   LSTR MSG_CHANGE_MEDIA                   = _UxGT("Zmiana karty SD");
   LSTR MSG_RELEASE_MEDIA                  = _UxGT("Zwolnienie karty");
+  LSTR MSG_RUN_AUTOFILES                  = _UxGT("Autostart");
+
   LSTR MSG_ZPROBE_OUT                     = _UxGT("Sonda Z za stołem");
   LSTR MSG_SKEW_FACTOR                    = _UxGT("Współczynik skrzywienia");
   LSTR MSG_BLTOUCH_SELFTEST               = _UxGT("BLTouch Self-Test");
   LSTR MSG_BLTOUCH_RESET                  = _UxGT("Reset BLTouch");
   LSTR MSG_BLTOUCH_MODE_CHANGE            = _UxGT("UWAGA: Złe ustawienia mogą uszkodzić drukarkę. Kontynuować?");
   LSTR MSG_HOME_FIRST                     = _UxGT("Najpierw Home %s");
+  LSTR MSG_ZPROBE_XOFFSET                 = _UxGT("Offset X");
+  LSTR MSG_ZPROBE_YOFFSET                 = _UxGT("Offset Y");
   LSTR MSG_ZPROBE_ZOFFSET                 = _UxGT("Offset Z");
+  LSTR MSG_ZPROBE_OFFSET_N                = _UxGT("Offset @");
   LSTR MSG_BABYSTEP_PROBE_Z               = _UxGT("Krok Z offsetu");
   LSTR MSG_MOVE_NOZZLE_TO_BED             = _UxGT("Przesuń dyszę do stołu");
   LSTR MSG_BABYSTEP_TOTAL                 = _UxGT("Łącznie");

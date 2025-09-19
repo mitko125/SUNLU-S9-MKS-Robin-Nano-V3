@@ -36,25 +36,25 @@ namespace LanguageNarrow_uk {
   constexpr uint8_t CHARSIZE                = 2;
   LSTR LANGUAGE                             = _UxGT("Ukrainian");
 
-  LSTR WELCOME_MSG                          = MACHINE_NAME _UxGT(" Готовий.");
+  LSTR WELCOME_MSG                          = MACHINE_NAME_SUBST _UxGT(" Готовий.");
   LSTR MSG_YES                              = _UxGT("ТАК");
   LSTR MSG_NO                               = _UxGT("НІ");
   LSTR MSG_BACK                             = _UxGT("Назад");
+
   LSTR MSG_MEDIA_ABORTING                   = _UxGT("Переривання...");
   LSTR MSG_MEDIA_INSERTED                   = _UxGT("SD-картка вставлена");
   LSTR MSG_MEDIA_REMOVED                    = _UxGT("SD-картка видалена");
-  LSTR MSG_MEDIA_WAITING                    = _UxGT("Вставте SD-картку");
   LSTR MSG_MEDIA_INIT_FAIL                  = _UxGT("Збій ініціаліз. SD");
   LSTR MSG_MEDIA_READ_ERROR                 = _UxGT("Помилка зчитування");
-  LSTR MSG_MEDIA_USB_REMOVED                = _UxGT("USB диск видалений");
-  LSTR MSG_MEDIA_USB_FAILED                 = _UxGT("Помилка USB диску");
+  LSTR MSG_USB_FD_DEVICE_REMOVED            = _UxGT("USB диск видалений");
+  LSTR MSG_USB_FD_USB_FAILED                = _UxGT("Помилка USB диску");
   LSTR MSG_KILL_SUBCALL_OVERFLOW            = _UxGT("Переповн. виклику");
+
   LSTR MSG_LCD_SOFT_ENDSTOPS                = _UxGT("Прогр.кінцевики");
   LSTR MSG_LCD_ENDSTOPS                     = _UxGT("Кінцевик"); // Max length 8 characters
   LSTR MSG_MAIN_MENU                        = _UxGT("Основне меню");
   LSTR MSG_ADVANCED_SETTINGS                = _UxGT("Інші налаштування");
   LSTR MSG_CONFIGURATION                    = _UxGT("Конфігурація");
-  LSTR MSG_RUN_AUTO_FILES                   = _UxGT("Автостарт");
   LSTR MSG_DISABLE_STEPPERS                 = _UxGT("Вимкнути двигуни");
   LSTR MSG_DEBUG_MENU                       = _UxGT("Меню Debug");
   LSTR MSG_PROGRESS_BAR_TEST                = _UxGT("Тест лінії прогр.");
@@ -225,7 +225,8 @@ namespace LanguageNarrow_uk {
   LSTR MSG_UBL_7_SAVE_MESH                  = _UxGT("7.Зберегти сітку");
 
   LSTR MSG_LED_CONTROL                      = _UxGT("Керування світлом");
-  LSTR MSG_LEDS                             = _UxGT("Підсвітка");
+  LSTR MSG_LIGHTS                           = _UxGT("Підсвітка");
+  LSTR MSG_LIGHT_N                          = _UxGT("Світло #{");
   LSTR MSG_LED_PRESETS                      = _UxGT("Передустан. світла");
   LSTR MSG_SET_LEDS_RED                     = _UxGT("Червоний");
   LSTR MSG_SET_LEDS_ORANGE                  = _UxGT("Помаранчевий");
@@ -237,7 +238,6 @@ namespace LanguageNarrow_uk {
   LSTR MSG_SET_LEDS_WHITE                   = _UxGT("Білий");
   LSTR MSG_SET_LEDS_DEFAULT                 = _UxGT("За умовчанням");
   LSTR MSG_LED_CHANNEL_N                    = _UxGT("Канал {");
-  LSTR MSG_LEDS2                            = _UxGT("Світло #2");
   LSTR MSG_NEO2_PRESETS                     = _UxGT("Передуст. світла #2");
   LSTR MSG_NEO2_BRIGHTNESS                  = _UxGT("Яскравість");
   LSTR MSG_CUSTOM_LEDS                      = _UxGT("Своє світло");
@@ -445,9 +445,14 @@ namespace LanguageNarrow_uk {
   LSTR MSG_FILAMENTUNLOAD                   = _UxGT("Видалити пруток");
   LSTR MSG_FILAMENTUNLOAD_E                 = _UxGT("Видалити пруток *");
   LSTR MSG_FILAMENTUNLOAD_ALL               = _UxGT("Видалити все");
+
   LSTR MSG_ATTACH_MEDIA                     = _UxGT("Вставити SD-картку");
+  LSTR MSG_ATTACH_SD                        = _UxGT("Вставити SD-картку");
+  LSTR MSG_ATTACH_USB                       = _UxGT("Вставити USB флешка");
   LSTR MSG_CHANGE_MEDIA                     = _UxGT("Заміна SD-картки");
   LSTR MSG_RELEASE_MEDIA                    = _UxGT("Видаліть SD-картку");
+  LSTR MSG_RUN_AUTOFILES                    = _UxGT("Автостарт");
+
   LSTR MSG_ZPROBE_OUT                       = _UxGT("Z-Зонд поза столом");
   LSTR MSG_SKEW_FACTOR                      = _UxGT("Фактор нахилу");
   LSTR MSG_BLTOUCH                          = _UxGT("BLTouch");
@@ -475,6 +480,7 @@ namespace LanguageNarrow_uk {
   LSTR MSG_ZPROBE_XOFFSET                   = _UxGT("Зміщення по X");
   LSTR MSG_ZPROBE_YOFFSET                   = _UxGT("Зміщення по Y");
   LSTR MSG_ZPROBE_ZOFFSET                   = _UxGT("Зміщення по Z");
+  LSTR MSG_ZPROBE_OFFSET_N                  = _UxGT("Зміщення по @");
   LSTR MSG_BABYSTEP_PROBE_Z                 = _UxGT("Крок Z зміщення");
   LSTR MSG_MOVE_NOZZLE_TO_BED               = _UxGT("Рухати сопло до столу");
   LSTR MSG_BABYSTEP_X                       = _UxGT("Мікрокрок X");
@@ -657,7 +663,8 @@ namespace LanguageNarrow_uk {
   LSTR MSG_TMC_HYBRID_THRS                  = _UxGT("Гібридний поріг");
   LSTR MSG_TMC_HOMING_THRS                  = _UxGT("Дім без кінцевиків");
   LSTR MSG_TMC_STEPPING_MODE                = _UxGT("Режим мікрокроку");
-  LSTR MSG_TMC_STEALTH_ENABLED              = _UxGT("Тихий режим увімк.");
+  LSTR MSG_TMC_STEALTHCHOP                  = _UxGT("Тихий режим увімк.");
+
   LSTR MSG_SERVICE_RESET                    = _UxGT("Зкидання");
   LSTR MSG_SERVICE_IN                       = _UxGT(" в:");
   LSTR MSG_BACKLASH                         = _UxGT("Люфт");

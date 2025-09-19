@@ -33,21 +33,21 @@ namespace LanguageNarrow_vi {
   constexpr uint8_t CHARSIZE              = 2;
   LSTR LANGUAGE                           = _UxGT("Vietnamese");
 
-  LSTR WELCOME_MSG                        = MACHINE_NAME _UxGT(" Sẵn sàng.");              // Ready
+  LSTR WELCOME_MSG                        = MACHINE_NAME_SUBST _UxGT(" Sẵn sàng.");        // Ready
   LSTR MSG_BACK                           = _UxGT("Trở lại");                              // Back
+
   LSTR MSG_MEDIA_ABORTING                 = _UxGT("Đang hủy bỏ...");
   LSTR MSG_MEDIA_INSERTED                 = _UxGT("Phương tiện được cắm vào");             // Media inserted
   LSTR MSG_MEDIA_REMOVED                  = _UxGT("Phương tiện được rút ra");
-  LSTR MSG_MEDIA_WAITING                  = _UxGT("Chờ đợi phương tiện");
   LSTR MSG_MEDIA_READ_ERROR               = _UxGT("Lỗi đọc phương tiện");
-  LSTR MSG_MEDIA_USB_REMOVED              = _UxGT("USB được rút ra");
-  LSTR MSG_MEDIA_USB_FAILED               = _UxGT("USB khởi thất bại");
+  LSTR MSG_USB_FD_DEVICE_REMOVED          = _UxGT("USB được rút ra");
+  LSTR MSG_USB_FD_USB_FAILED              = _UxGT("USB khởi thất bại");
+
   LSTR MSG_LCD_ENDSTOPS                   = _UxGT("Công tắc");                             // Endstops - công tắc hành trình
   LSTR MSG_LCD_SOFT_ENDSTOPS              = _UxGT("Công tắc mềm");                         // Soft Endstops
   LSTR MSG_MAIN_MENU                      = _UxGT("Chính");                                // Main
   LSTR MSG_ADVANCED_SETTINGS              = _UxGT("Thiết lập cấp cao");                    // Advanced Settings
   LSTR MSG_CONFIGURATION                  = _UxGT("Cấu hình");                             // Configuration
-  LSTR MSG_RUN_AUTO_FILES                 = _UxGT("Khởi chạy tự động");                    // Autostart
   LSTR MSG_DISABLE_STEPPERS               = _UxGT("Tắt động cơ bước");                     // Disable steppers
   LSTR MSG_DEBUG_MENU                     = _UxGT("Menu gỡ lỗi");                          // Debug Menu
   LSTR MSG_PROGRESS_BAR_TEST              = _UxGT("Kiểm tra tiến độ");                     // Progress bar test
@@ -170,7 +170,8 @@ namespace LanguageNarrow_vi {
   LSTR MSG_UBL_7_SAVE_MESH                = _UxGT("7.Lưu lưới bàn");
 
   LSTR MSG_LED_CONTROL                    = _UxGT("Điều khiển LED");                       // LED Control
-  LSTR MSG_LEDS                           = _UxGT("Đèn");                                  // Lights
+  LSTR MSG_LIGHTS                         = _UxGT("Đèn");                                  // Lights
+  LSTR MSG_LIGHT_N                        = _UxGT("Đèn #{");                               // Light #{
   LSTR MSG_LED_PRESETS                    = _UxGT("Đèn định sẵn");                         // Light Presets
   LSTR MSG_SET_LEDS_RED                   = _UxGT("Đỏ");                                   // Red
   LSTR MSG_SET_LEDS_ORANGE                = _UxGT("Cam");                                  // Orange
@@ -308,9 +309,14 @@ namespace LanguageNarrow_vi {
   LSTR MSG_FILAMENTUNLOAD                 = _UxGT("Dỡ dây nhựa");                         // Unload filament
   LSTR MSG_FILAMENTUNLOAD_E               = _UxGT("Dỡ dây nhựa *");                       // Unload filament
   LSTR MSG_FILAMENTUNLOAD_ALL             = _UxGT("Dỡ tất cả");                           // Unload All
+
   LSTR MSG_ATTACH_MEDIA                   = _UxGT("Khởi tạo phương tiện");                // Attach media
+  LSTR MSG_ATTACH_SD                      = _UxGT("Khởi tạo thẻ SD");                     // Attach SD Card
+  LSTR MSG_ATTACH_USB                     = _UxGT("Khởi tạo thanh USB");                  // Attach USB Drive
   LSTR MSG_CHANGE_MEDIA                   = _UxGT("Thay phương tiện");                    // Change midea
   LSTR MSG_RELEASE_MEDIA                  = _UxGT("Phát hành phương tiện");
+  LSTR MSG_RUN_AUTOFILES                  = _UxGT("Khởi chạy tự động");                    // Autostart
+
   LSTR MSG_ZPROBE_OUT                     = _UxGT("Đầu Dò Z qua bàn");                    // Z Probe past bed
   LSTR MSG_SKEW_FACTOR                    = _UxGT("Hệ số nghiêng");                       // Skew Factor
   LSTR MSG_BLTOUCH                        = _UxGT("BLTOUCH");                             // BLTouch
@@ -321,7 +327,10 @@ namespace LanguageNarrow_vi {
   LSTR MSG_MANUAL_DEPLOY                  = _UxGT("Đem Đầu Dò-Z");                        // Deploy Z-Probe
   LSTR MSG_MANUAL_STOW                    = _UxGT("Cất Đầu Dò-Z");                        // Stow Z-Probe
   LSTR MSG_HOME_FIRST                     = _UxGT("Về nhà %s Trước");                     // Home %s first
+  LSTR MSG_ZPROBE_XOFFSET                 = _UxGT("Đầu Dò Bù Đắp X");                     // Probe X Offset
+  LSTR MSG_ZPROBE_YOFFSET                 = _UxGT("Đầu Dò Bù Đắp Y");                     // Probe Y Offset
   LSTR MSG_ZPROBE_ZOFFSET                 = _UxGT("Đầu Dò Bù Đắp Z");                     // Probe Z Offset
+  LSTR MSG_ZPROBE_OFFSET_N                = _UxGT("Đầu Dò Bù Đắp @");                     // Probe @ Offset
   LSTR MSG_BABYSTEP_PROBE_Z               = _UxGT("Điều chỉnh Z từng");                   // Babystep Probe Z
   LSTR MSG_BABYSTEP_X                     = _UxGT("Nhít X");                              // Babystep X
   LSTR MSG_BABYSTEP_Y                     = _UxGT("Nhít Y");
@@ -364,19 +373,11 @@ namespace LanguageNarrow_vi {
   LSTR MSG_INFO_PROTOCOL                  = _UxGT("Giao Thức");                           // Protocol
   LSTR MSG_CASE_LIGHT                     = _UxGT("Đèn Khuông");                          // Case light
   LSTR MSG_CASE_LIGHT_BRIGHTNESS          = _UxGT("Độ Sáng");                             // Light Brightness
-  #if LCD_WIDTH >= 20 || HAS_DWIN_E3V2
-    LSTR MSG_INFO_PRINT_COUNT             = _UxGT("Số In");                               // Print Count
-    LSTR MSG_INFO_COMPLETED_PRINTS        = _UxGT("Đã hoàn thành");
-    LSTR MSG_INFO_PRINT_TIME              = _UxGT("Tổng số thời gian in");               // Total print time
-    LSTR MSG_INFO_PRINT_LONGEST           = _UxGT("Thời gian việc lâu nhất");             // Longest job time
-    LSTR MSG_INFO_PRINT_FILAMENT          = _UxGT("Tổng số đùn");                         // Extruded total
-  #else
-    LSTR MSG_INFO_PRINT_COUNT             = _UxGT("In");                                  // Prints
-    LSTR MSG_INFO_COMPLETED_PRINTS        = _UxGT("Đã hoàn thành");                       // Completed
-    LSTR MSG_INFO_PRINT_TIME              = _UxGT("Tổng số");                            // Total
-    LSTR MSG_INFO_PRINT_LONGEST           = _UxGT("Dài nhất");                            // Longest
-    LSTR MSG_INFO_PRINT_FILAMENT          = _UxGT("Đã ép đùn");
-  #endif
+  LSTR MSG_INFO_PRINT_COUNT               = _UxGT("In");                                  // Prints
+  LSTR MSG_INFO_COMPLETED_PRINTS          = _UxGT("Đã hoàn thành");                       // Completed
+  LSTR MSG_INFO_PRINT_TIME                = _UxGT("Tổng số");                            // Total
+  LSTR MSG_INFO_PRINT_LONGEST             = _UxGT("Dài nhất");                            // Longest
+  LSTR MSG_INFO_PRINT_FILAMENT            = _UxGT("Đã ép đùn");
   LSTR MSG_INFO_MIN_TEMP                  = _UxGT("Nhiệt độ tối thiểu");                  // Min Temp
   LSTR MSG_INFO_MAX_TEMP                  = _UxGT("Nhiệt độ tối đa");                     // Max temp
   LSTR MSG_INFO_PSU                       = _UxGT("Bộ nguồn");                            // PSU
@@ -427,7 +428,7 @@ namespace LanguageNarrow_vi {
   LSTR MSG_TMC_HYBRID_THRS                = _UxGT("Ngưỡng Hỗn Hợp");                      // Hybrid threshold
   LSTR MSG_TMC_HOMING_THRS                = _UxGT("Vô cảm biến");                         // Sensorless homing
   LSTR MSG_TMC_STEPPING_MODE              = _UxGT("Chế độ từng bước");                    // Stepping mode
-  LSTR MSG_TMC_STEALTH_ENABLED            = _UxGT("CắtTàngHình được kích hoạt");          // StealthChop enabled
+  LSTR MSG_TMC_STEALTHCHOP                = _UxGT("CắtTàngHình");                         // StealthChop
 
   LSTR MSG_SHORT_DAY                      = _UxGT("n");                                   // d - ngày - One character only
   LSTR MSG_SHORT_HOUR                     = _UxGT("g");                                   // h - giờ  - One character only
@@ -437,6 +438,11 @@ namespace LanguageNarrow_vi {
 namespace LanguageWide_vi {
   using namespace LanguageNarrow_vi;
   #if LCD_WIDTH >= 20 || HAS_DWIN_E3V2
+    LSTR MSG_INFO_PRINT_COUNT             = _UxGT("Số In");                               // Print Count
+    LSTR MSG_INFO_COMPLETED_PRINTS        = _UxGT("Đã hoàn thành");
+    LSTR MSG_INFO_PRINT_TIME              = _UxGT("Tổng số thời gian in");               // Total print time
+    LSTR MSG_INFO_PRINT_LONGEST           = _UxGT("Thời gian việc lâu nhất");             // Longest job time
+    LSTR MSG_INFO_PRINT_FILAMENT          = _UxGT("Tổng số đùn");                         // Extruded total
   #endif
 }
 

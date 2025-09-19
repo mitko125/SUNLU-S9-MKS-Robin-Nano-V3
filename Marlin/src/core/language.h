@@ -88,6 +88,7 @@
   #undef  MACHINE_NAME
   #define MACHINE_NAME DEFAULT_MACHINE_NAME
 #endif
+#define MACHINE_NAME_SUBST TERN(CONFIGURABLE_MACHINE_NAME, "$", MACHINE_NAME)
 
 #define MARLIN_WEBSITE_URL "marlinfw.org"
 
@@ -191,6 +192,7 @@
 #define STR_ERR_HOTEND_TOO_COLD             "Hotend too cold"
 #define STR_ERR_EEPROM_WRITE                "Error writing to EEPROM!"
 #define STR_ERR_EEPROM_CORRUPT              "EEPROM Corrupt"
+#define STR_EEPROM_INITIALIZED              "EEPROM Initialized"
 
 #define STR_FILAMENT_CHANGE_HEAT_LCD        "Press button to heat nozzle"
 #define STR_FILAMENT_CHANGE_INSERT_LCD      "Insert filament and press button"
@@ -310,8 +312,9 @@
 #define STR_FILAMENT_RUNOUT_SENSOR          "Filament runout sensor"
 #define STR_DRIVER_STEPPING_MODE            "Driver stepping mode"
 #define STR_STEPPER_DRIVER_CURRENT          "Stepper driver current"
+#define STR_HOMING_CURRENT                  "Homing Current (mA)"
 #define STR_HYBRID_THRESHOLD                "Hybrid Threshold"
-#define STR_STALLGUARD_THRESHOLD            "StallGuard threshold"
+#define STR_STALLGUARD_THRESHOLD            "StallGuard Threshold"
 #define STR_HOME_OFFSET                     "Home offset"
 #define STR_SOFT_ENDSTOPS                   "Soft endstops"
 #define STR_MATERIAL_HEATUP                 "Material heatup parameters"
@@ -323,6 +326,7 @@
 #define STR_TEMPERATURE_UNITS               "Temperature Units"
 #define STR_USER_THERMISTORS                "User thermistors"
 #define STR_DELAYED_POWEROFF                "Delayed poweroff"
+#define STR_STORED_MACROS                   "Stored macros"
 
 //
 // General axis names

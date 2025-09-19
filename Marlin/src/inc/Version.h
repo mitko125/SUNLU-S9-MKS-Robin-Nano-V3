@@ -25,7 +25,7 @@
  * Release version. Leave the Marlin version or apply a custom scheme.
  */
 #ifndef SHORT_BUILD_VERSION
-  #define SHORT_BUILD_VERSION "bugfix-2.1.x"
+  #define SHORT_BUILD_VERSION "2.1.3-beta3"
 #endif
 
 /**
@@ -42,7 +42,7 @@
  * version was tagged.
  */
 #ifndef STRING_DISTRIBUTION_DATE
-  #define STRING_DISTRIBUTION_DATE "2024-10-12"
+  #define STRING_DISTRIBUTION_DATE "2025-06-25"
 #endif
 
 /**
@@ -101,8 +101,8 @@
 #endif
 
 /**
- * Set the vendor info the serial USB interface, if changable
- * Currently only supported by DUE platform
+ * Set the vendor info the serial USB interface, if changeable.
+ * Currently only supported by DUE platform.
  */
 #ifndef USB_DEVICE_VENDOR_ID
   #define USB_DEVICE_VENDOR_ID            0x03EB /* ATMEL VID */
