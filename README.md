@@ -61,3 +61,5 @@ but without TFT_LVGL_UI there is no MKS_WIFI_MODULE
 ## Commit - Mount BIGTREETECH UPS 24V V1.0
 
 ## Commit - Merge remote-tracking branch 'upstream/release-2.1.3-beta3'
+
+## Commit - Improving the bed leveling grid
