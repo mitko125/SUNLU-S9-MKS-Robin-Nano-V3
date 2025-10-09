@@ -63,3 +63,9 @@ but without TFT_LVGL_UI there is no MKS_WIFI_MODULE
 ## Commit - Merge remote-tracking branch 'upstream/release-2.1.3-beta3'
 
 ## Commit - Improving the bed leveling grid
+
+Отказах се от TFT_LVGL_UI, преминах на TFT_COLOR_UI в последствие загубих MKS_WIFI_MODULE (esp3d).  
+MKS са прекратили развитието на софтуера преди 4-5 години и не работят правилно M25, M125 и M600.
+При TFT_COLOR_UI всичко работи добре с SD карта. Ако работим без SD карта, само с OctoPrint може да се ползва и MKS, но забравете за датчици за филаменти и паузи.
+
+Остават проби с OctoPrint и плъгините му.
