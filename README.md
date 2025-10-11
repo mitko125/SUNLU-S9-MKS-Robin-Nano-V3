@@ -63,3 +63,33 @@ but without TFT_LVGL_UI there is no MKS_WIFI_MODULE
 ## Commit - Merge remote-tracking branch 'upstream/release-2.1.3-beta3'
 
 ## Commit - Improving the bed leveling grid
+
+## Commit - OctoPrint
+
+- With these settings in **Marlin** it works from **SD ​​card** and from **OctoPrint**. We can safely start printing from 'PC' or 'LCD' and forget about the computer. The filament sensor is in **MKS Robin Nano V3**, there is no need to connect to **Raspberry PIO**. No additional plugins or settings are required in **OctoPrint**. All control is in **Marlin** duplicated by host notifications and commands in **OctoPrint**;
+- For pauses (for example, for installing nuts) can be built into 'Gcode' **M25** or **M125** (M125 allows stopping at certain coordinates, for example: 'M125 X0 Y300 L0 P1');
+- For changing the filament can be built into 'Gcode' **M600**, which first unloads the filament;
+- Set the parameters after '#define ADVANCED_PAUSE_FEATURE' and '#define NOZZLE_PARK_FEATURE', according to the specific printer;
+- After 'PURGE' from 'LCD' or 'OctoPrint', the extruder stepper motor is turned on and the filament cannot be manipulated manually through the extruder gears;
+- It also worked well with the 'Change_Filament' plugin;
+- I read about many changes of:
+
+```c++
+#define FILAMENT_RUNOUT_SCRIPT "M600"
+```
+
+with similar:
+
+```c++
+#define FILAMENT_RUNOUT_SCRIPT "M118 //action:pause"
+#define FILAMENT_RUNOUT_SCRIPT "M412 H"
+```
+
+but all lead to settings in **OctoPrint** and incompatibility of printing from **OctoPrint** and **SD ​​card**.
+
+### Additionally
+
+- I gave up on **TFT_LVGL_UI**, switched to **TFT_COLOR_UI** and subsequently lost **MKS_WIFI_MODULE (esp3d)**. 'MKS' stopped developing the software 4-5 years ago and M25, M125 and M600 do not work properly. With TFT_COLOR_UI everything works fine with SD card. If we work without SD card, only with OctoPrint can MKS - TFT_COLOR_UI be used, but forget about filament sensors and pauses without plugins.
+
+- this publication was very useful to me:
+https://www.reddit.com/r/3Dprinting/comments/l6xei2/how_to_detect_filament_runout_in_marlin_and/
