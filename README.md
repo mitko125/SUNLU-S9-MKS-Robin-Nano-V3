@@ -66,30 +66,30 @@ but without TFT_LVGL_UI there is no MKS_WIFI_MODULE
 
 ## Commit - OctoPrint
 
-- При тези настройки в **Marlin** работи работи от **SD card** и от **OctoPrint**. Може спокойно да запуснем печата от 'PC' или 'LCD' и да забравим за компютъра. Датчика за филамента е в **MKS Robin Nano V3**, няма нужда да се свързва към **Raspberry PIO**. Не са необходими никакви допълнителни плъгини или настройки в **OctoPrint**. Цялото управление е в **Marlin** дублирано от хост уведомления и команди към **OctoPrint**;
-- За паузи (например за вграждане на гайки)  могат да се вграждат в 'Gcode' **M25** или **M125** (M125 разрешава спиране на определени координати като пример: 'M125 X0 Y300 L0 P1');
-- За смяна на филамента могат да се вграждат в 'Gcode' **M600**, която педварително разтоварва филамента;
-- Настройте параметрите след '#define ADVANCED_PAUSE_FEATURE' и '#define NOZZLE_PARK_FEATURE', според конкретния принтер;
-- След 'PURGE' от 'LCD' или 'OctoPrint' се влючва стъпковия двигател на екструдера и не ноже да се манинипулира филамента ръчно чрез зъбчатките на екструдера;
-- Добре се сработи и с плъгина 'Change_Filament';
-- Прочетох за много смени на:
+- With these settings in **Marlin** it works from **SD ​​card** and from **OctoPrint**. We can safely start printing from 'PC' or 'LCD' and forget about the computer. The filament sensor is in **MKS Robin Nano V3**, there is no need to connect to **Raspberry PIO**. No additional plugins or settings are required in **OctoPrint**. All control is in **Marlin** duplicated by host notifications and commands in **OctoPrint**;
+- For pauses (for example, for installing nuts) can be built into 'Gcode' **M25** or **M125** (M125 allows stopping at certain coordinates, for example: 'M125 X0 Y300 L0 P1');
+- For changing the filament can be built into 'Gcode' **M600**, which first unloads the filament;
+- Set the parameters after '#define ADVANCED_PAUSE_FEATURE' and '#define NOZZLE_PARK_FEATURE', according to the specific printer;
+- After 'PURGE' from 'LCD' or 'OctoPrint', the extruder stepper motor is turned on and the filament cannot be manipulated manually through the extruder gears;
+- It also worked well with the 'Change_Filament' plugin;
+- I read about many changes of:
 
 ```c++
 #define FILAMENT_RUNOUT_SCRIPT "M600"
 ```
 
-с подобни:
+with similar:
 
 ```c++
 #define FILAMENT_RUNOUT_SCRIPT "M118 //action:pause"
 #define FILAMENT_RUNOUT_SCRIPT "M412 H"
 ```
 
-но всички водят до настройки в **OctoPrint** и несъвместимост на печата от **OctoPrint** и **SD card**.
+but all lead to settings in **OctoPrint** and incompatibility of printing from **OctoPrint** and **SD ​​card**.
 
-### Допълнително
+### Additionally
 
-- Отказах се от **TFT_LVGL_UI**, преминах на **TFT_COLOR_UI** в последствие загубих **MKS_WIFI_MODULE (esp3d)**. 'MKS' са прекратили развитието на софтуера преди 4-5 години и не работят правилно M25, M125 и M600. При TFT_COLOR_UI всичко работи добре с SD card. Ако работим без SD card, само с OctoPrint може да се ползва и MKS - TFT_COLOR_UI, но забравете за датчици за филаменти и паузи без плъгини.
+- I gave up on **TFT_LVGL_UI**, switched to **TFT_COLOR_UI** and subsequently lost **MKS_WIFI_MODULE (esp3d)**. 'MKS' stopped developing the software 4-5 years ago and M25, M125 and M600 do not work properly. With TFT_COLOR_UI everything works fine with SD card. If we work without SD card, only with OctoPrint can MKS - TFT_COLOR_UI be used, but forget about filament sensors and pauses without plugins.
 
-- от голяма полза ми беше публикацията:
+- this publication was very useful to me:
 https://www.reddit.com/r/3Dprinting/comments/l6xei2/how_to_detect_filament_runout_in_marlin_and/
